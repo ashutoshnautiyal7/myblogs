@@ -15,7 +15,7 @@ import fetcher from '../lib/fetcher'
  export default function Section2() {
 
     // console.log(getPost())
-    // getPost().then( res => console.log(res))
+    // getPost().then( res => console.log(res))xx
   return (
     <section className='container mx-auto  py-10'>
         <h1 className='font-bold text-4xl py-12 text-center '>Latest Posts</h1>
