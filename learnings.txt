@@ -1,0 +1,25 @@
+order to order your flex box 
+
+// container --->   	None	width: 100%;
+                                sm (640px)	max-width: 640px;
+                                md (768px)	max-width: 768px;
+                                lg (1024px)	max-width: 1024px;
+                                xl (1280px)	max-width: 1280px;
+                                2xl (1536px)	max-width: 1536px;
+
+// since we want our header and footer to be in all the pages so we will we have put header.jsx and footer.jsx in app.js  layout component
+
+
+we are using swiper.js slider for our automatic carausel 
+
+when we create a new route we create that page  inside our pages folder
+
+
+// this file is created so that we can have we can access individual post via the post id ----> i.e dynamic routing 
+
+// this {postid} file is a slug or we can say a variable
+
+
+// to get the data from params we have------> req.query
+
+// we have renamed posts file from /api/posts/posts/ to index.js  as  the /api/posts   route directly catches index.js file  as default
