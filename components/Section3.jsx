@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Author from './child/author'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -10,7 +10,37 @@ import SwiperCore, {Autoplay} from 'swiper'
 // Import Swiper styles
 import 'swiper/css';
 
+import Spinner from './child/spinner'
+
+
 export default function Section3() {
+
+    // fetching the data from popular object
+     // fetching the data from the backend 
+     const [data, setData] = useState([]);
+     const [loading, setLoading] = useState(false);
+   
+     useEffect(() => {
+       setLoading(true);
+       fetch('/api/popular')
+         .then((res) => res.json())
+         .then((data) => {
+           setData(data);
+         })
+         .catch((err) => {
+           console.log(err);
+         })
+         .finally(() => {
+           setLoading(false);
+         });
+     }, []);
+   
+     if (loading) {
+       return <Spinner ></Spinner>
+     }
+ 
+ 
+
   return (
     <section className='container mx-auto py-16 '>
 
@@ -26,43 +56,53 @@ export default function Section3() {
 
                         slidesPerView={2}
 
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
+                        // onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
                         >
+                        {/* <SwiperSlide>{Post()}</SwiperSlide>
                         <SwiperSlide>{Post()}</SwiperSlide>
                         <SwiperSlide>{Post()}</SwiperSlide>
                         <SwiperSlide>{Post()}</SwiperSlide>
-                        <SwiperSlide>{Post()}</SwiperSlide>
-                        ...
+                        ... */}
+
+                        {data.map((item) => (
+                        // <Post data={item} />
+                            <SwiperSlide><Post data={item} /></SwiperSlide>
+                        ))}
+
+                    
             </Swiper>
 
     </section>
   )
 }
 
-function Post(){
+function Post({data}){
+
+    const {id, category, img, published ,description,  author, title} = data;
+
     return(
          <div className="item">
 
             <div className="images">
                 <div className='image' >
-                    <Image src={"/images/img1.jpg"} className="" width={600} height={450} />
+                    <Image src={img || "/images/img1.jpg"} className="" width={600} height={450} />
                 </div>
             </div>
 
             <div className="info flex justify-center flex-col py-4 ">
                 <div className="cat">
-                    <Link href={"/"}><a className='text-center text-orange-600 '>Business Travel </a></Link>
-                    <Link href={"/"}><a className='text-center text-gray-600'> - july 27, 2022</a></Link>
+                    <Link href={"/"}><a className='text-center text-orange-600 '>{category} </a></Link>
+                    <Link href={"/"}><a className='text-center text-gray-600'> - {published}</a></Link>
                 </div>
 
                 <div className="title ">
-                    <Link href={"/"}><a className='  text-center text-justify text-3xl  font-semibold'>your most unhappy customers are your greatest source of learning  </a></Link>
+                    <Link href={"/"}><a className='  text-center text-justify text-3xl  font-semibold'>title  </a></Link>
                 </div>
 
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iste repellat quo aperiam possimus porro a repellendus eos, officia itaque quidem quae, minima saepe. Possimus veritatis, impedit quo dolore sunt alias facilis dolores ipsum nostrum vero inventore similique animi sequi maxime. Nulla, iure et.</p>
+                <p>{description}</p>
 
-                <Author />
+                {author?<Author></Author>:<></> }
 
 
             </div>

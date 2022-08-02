@@ -4,7 +4,7 @@ import data from "../data";
 
 // this {postid} file is a slug or we can say a variable
 
-
+ 
 
 
 // api/posts/1

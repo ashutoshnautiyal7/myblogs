@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Author from './child/author'
 
 // Import Swiper React components
@@ -12,8 +12,35 @@ import SwiperCore, {Autoplay} from 'swiper'
 import 'swiper/css';
 
 
+import Spinner from './child/spinner'
+
 
 export default function Section1() {
+
+    // fetching the data from the backend 
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+  
+    useEffect(() => {
+      setLoading(true);
+      fetch('/api/trending')
+        .then((res) => res.json())
+        .then((data) => {
+          setData(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }, []);
+  
+    if (loading) {
+      return <Spinner ></Spinner>
+    }
+
+
 
     SwiperCore.use([Autoplay])
 
@@ -22,6 +49,7 @@ export default function Section1() {
         backgroundPosition:"right"
     }
 
+     
 
   return (
     <section className='py-16' style={bg}>
@@ -35,13 +63,21 @@ export default function Section1() {
                     }}
                     loop={true}
                     slidesPerView={1}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    
                     >
+
+
+                    {/* <SwiperSlide>{Slide()}</SwiperSlide>
                     <SwiperSlide>{Slide()}</SwiperSlide>
                     <SwiperSlide>{Slide()}</SwiperSlide>
-                    <SwiperSlide>{Slide()}</SwiperSlide>
-                    <SwiperSlide>{Slide()}</SwiperSlide>
+                    <SwiperSlide>{Slide()}</SwiperSlide> */}
+
+                    {data.map((item) => (
+                        // <Post data={item} />
+                        <SwiperSlide><Slide data={item} /></SwiperSlide>
+                    ))}
+
+                    
                     ...
                 </Swiper>
         </div>
@@ -50,26 +86,29 @@ export default function Section1() {
 }
 
 
-function Slide(){
+function Slide({data}){
+
+    const {id, category, img, published ,description,  author, title} = data;
+
     return(
 
         <div className="grid md:grid-cols-2">
             <div className='image' >
-                <Image src={"/images/img1.jpg"} width={600} height={600} />
+                <Image src={img || "/images/img1.jpg"} width={600} height={600} />
             </div>
 
 
             <div className='info flex flex-col justify-center'>
                 <div className="cat">
-                    <Link href={"/"}><a className='text-center text-orange-600 '>Business Travel </a></Link>
-                    <Link href={"/"}><a className='text-center text-gray-600'> - july 27, 2022</a></Link>
+                    <Link href={"/"}><a className='text-center text-orange-600 '>{category} </a></Link>
+                    <Link href={"/"}><a className='text-center text-gray-600'> - {published}</a></Link>
                 </div>
                 <div className="title">
-                    <Link href={"/"}><a className='text-center text-3xl md:text-6xl '>your most unhappy curstomers are your greatest source of learning  </a></Link>
+                    <Link href={"/"}><a className='text-center text-3xl md:text-6xl '>{title}  </a></Link>
 
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iste repellat quo aperiam possimus porro a repellendus eos, officia itaque quidem quae, minima saepe. Possimus veritatis, impedit quo dolore sunt alias facilis dolores ipsum nostrum vero inventore similique animi sequi maxime. Nulla, iure et.</p>
+                    <p>{description}</p>
 
-                    <Author />
+                    {author?<Author></Author>:<></> }
                 </div>
             </div>
 
