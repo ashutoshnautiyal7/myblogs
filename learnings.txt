@@ -23,3 +23,10 @@ when we create a new route we create that page  inside our pages folder
 // to get the data from params we have------> req.query
 
 // we have renamed posts file from /api/posts/posts/ to index.js  as  the /api/posts   route directly catches index.js file  as default
+
+// usinng the getStaticProps nextjs is going to build this page statically when we build the application 
+but what if we use swr//
+    // swr is used to fetch the data from the backend and it is used for caching    
+    // with swr we can access all the features of getStaticProps along with the features of swr
+    // using swr we can prerender the page for seo , also do caching , revalidtion , focus tracking, refreshing on the interval on the client side
+    

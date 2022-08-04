@@ -94,21 +94,24 @@ function Slide({data}){
 
         <div className="grid md:grid-cols-2">
             <div className='image' >
-                <Image src={img || "/images/img1.jpg"} width={600} height={600} />
+                <Link href={`/posts/${id}`}>
+                  <Image src={img || "/images/img1.jpg"} width={600} height={600} />
+                </Link>
             </div>
 
 
             <div className='info flex flex-col justify-center'>
                 <div className="cat">
-                    <Link href={"/"}><a className='text-center text-orange-600 '>{category} </a></Link>
-                    <Link href={"/"}><a className='text-center text-gray-600'> - {published}</a></Link>
+                    <Link href={`/posts/${id}`}><a className='text-center text-orange-600 '>{category} </a></Link>
+                    <Link href={`/posts/${id}`}><a className='text-center text-gray-600'> - {published}</a></Link>
                 </div>
                 <div className="title">
-                    <Link href={"/"}><a className='text-center text-3xl md:text-6xl '>{title}  </a></Link>
+                    <Link href={`/posts/${id}`}><a className='text-center text-3xl md:text-6xl '>{title}  </a></Link>
 
                     <p>{description}</p>
 
-                    {author?<Author></Author>:<></> }
+                    {author?<Author {...author}></Author>:<></> }
+                    {/* ...author is the way of destructing the author object --> now we can put the changes in <Author> component */}
                 </div>
             </div>
 

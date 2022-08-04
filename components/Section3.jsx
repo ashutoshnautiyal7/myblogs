@@ -54,7 +54,15 @@ export default function Section3() {
                         }}
                         loop={true}
 
-                        slidesPerView={2}
+                        // slidesPerView={2}
+                        // to make this completely reponsive
+                        breakpoints={{
+                          640:{
+                            slidesPerView:2,
+                            spaceBetween : 30,
+
+                          }
+                        }}
 
                         // onSlideChange={() => console.log('slide change')}
                         // onSwiper={(swiper) => console.log(swiper)}
@@ -86,24 +94,25 @@ function Post({data}){
 
             <div className="images">
                 <div className='image' >
+                <Link href={`/posts/${id}`}>
                     <Image src={img || "/images/img1.jpg"} className="" width={600} height={450} />
+                </Link>
                 </div>
             </div>
 
             <div className="info flex justify-center flex-col py-4 ">
                 <div className="cat">
-                    <Link href={"/"}><a className='text-center text-orange-600 '>{category} </a></Link>
-                    <Link href={"/"}><a className='text-center text-gray-600'> - {published}</a></Link>
+                <Link href={`/posts/${id}`}><a className='text-center text-orange-600 '>{category} </a></Link>
+                <Link href={`/posts/${id}`}><a className='text-center text-gray-600'> - {published}</a></Link>
                 </div>
 
                 <div className="title ">
-                    <Link href={"/"}><a className='  text-center text-justify text-3xl  font-semibold'>title  </a></Link>
+                <Link href={`/posts/${id}`}><a className='  text-center text-justify text-3xl  font-semibold'>title  </a></Link>
                 </div>
 
                 <p>{description}</p>
 
-                {author?<Author></Author>:<></> }
-
+                {author?<Author {...author}></Author>:<></> }
 
             </div>
          </div>
