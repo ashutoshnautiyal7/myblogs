@@ -44,17 +44,18 @@ export default function Section1() {
 
     SwiperCore.use([Autoplay])
 
-    const bg = {
-        background: "url('/images/banner.png') no-repeat",
-        backgroundPosition:"right"
-    }
+    // const bg = {
+    //     background: "url('/images/banner.png') no-repeat",
+    //     backgroundPosition:"right"
+    // }
 
+    
      
 
   return (
-    <section className='py-16' style={bg}>
+    <section >
         <div className="container mx-auto">
-            <h1 className="font-bold text-4xl  pb-12 text-center">Trending</h1>
+            <h1 className="font-medium text-4xl my-8 text-center">Trending</h1>
                 <Swiper
 
 
@@ -76,39 +77,40 @@ export default function Section1() {
                         // <Post data={item} />
                         <SwiperSlide><Slide data={item} /></SwiperSlide>
                     ))}
-
-                    
-                    ...
                 </Swiper>
         </div>
+
+     
     </section>
+
+    
   )
 }
 
 
 function Slide({data}){
 
-    const {id, category, img, published ,description,  author, title} = data;
+    const {id, category, img, published ,subtitle,  author, title} = data;
 
     return(
 
-        <div className="grid md:grid-cols-2">
-            <div className='image' >
-                <Link href={`/posts/${id}`}>
+        <div className="grid md:grid-cols-2 m-2 p-1">
+            <div className='image flex flex-col items-center justify-center'  >
+                <Link href={`/trending/${id}`}>
                   <Image src={img || "/images/img1.jpg"} width={600} height={600} />
                 </Link>
             </div>
 
 
-            <div className='info flex flex-col justify-center'>
+            <div className='info flex flex-col justify-center md:pl-8 lg:p-2'>
                 <div className="cat">
-                    <Link href={`/posts/${id}`}><a className='text-center text-orange-600 '>{category} </a></Link>
-                    <Link href={`/posts/${id}`}><a className='text-center text-gray-600'> - {published}</a></Link>
+                    <Link href={`/trending/${id}`}><a className='text-center text-orange-600 p-1 md:p-2 '>{category} </a></Link>
+                    <Link href={`/trending/${id}`}><a className='text-center text-gray-600  p-1 md:p-2'> - {published}</a></Link>
                 </div>
                 <div className="title">
-                    <Link href={`/posts/${id}`}><a className='text-center text-3xl md:text-6xl '>{title}  </a></Link>
+                    <Link href={`/trending/${id}`}><a className='text-center text-3xl xl:text-6xl my-1 '>{title}  </a></Link>
 
-                    <p>{description}</p>
+                    <p className='mt-5'>{subtitle}</p>
 
                     {author?<Author {...author}></Author>:<></> }
                     {/* ...author is the way of destructing the author object --> now we can put the changes in <Author> component */}

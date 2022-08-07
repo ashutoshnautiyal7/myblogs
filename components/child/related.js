@@ -64,7 +64,7 @@ function Post({data}){
       <div className="image flex flex-col justify-start ">
 
       <div className='image' >
-              <Image src={img ||"/images/img1.jpg"} className="rounded" width={300} height={300} />
+              <Image src={img ||"/images/img1.jpg"} className="rounded" width={200} height={170} />
           </div>
       </div>
 

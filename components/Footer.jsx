@@ -22,7 +22,7 @@ function Footer() {
             
             {/* <h1><FaBeer /></h1> */}
           </div>
-          <p className='py-5 text-gray-400 '> Copyright 2022 NO Rights Reserverd, Feel free to copy</p>
+          <p className='py-5 text-gray-400 mx-2 text-center '> Copyright 2022 NO Rights Reserverd, Feel free to copy</p>
           <p className=' text-gray-400 text-center'> Terms and conditions not applied</p>
         </div>
       </div>

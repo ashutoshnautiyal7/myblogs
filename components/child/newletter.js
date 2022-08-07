@@ -9,7 +9,7 @@ export default function newletter() {
             <input type="text" className='shadow border-2 rounded-md w-9/12 py-3 px-3 text-gray-700 focus:outline-orange-700 focus:shadow-outline ' placeholder='Enter your Email' />
         </div>
 
-        <button className='bg-orange-400 px-20 py-3 rounded-full text-gray-50 text-xl '>Subscribe</button>
+        <button className='bg-gradient-to-r from-orange-400 to-pink-500 px-20 py-3 rounded-full text-gray-50 text-xl '>Subscribe</button>
 
     </section>
   )

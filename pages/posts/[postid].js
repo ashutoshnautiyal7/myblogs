@@ -21,7 +21,7 @@ export default function page({id, category, img, published ,description, subtitl
 
   return (
     <Format>
-        <section className="container mx-auto py-16 w-1/2 ">
+        <section className="container mx-auto py-16 md:w-2/3 xl:w-1/2 p-2 ">
 
             <div className="flex justify-center ">
             {author?<Author {...author}></Author>:<></> }

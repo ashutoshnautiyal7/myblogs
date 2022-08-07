@@ -5,17 +5,20 @@ export default {
     Trending : [
         {
             id: 1,
-            title: "Your most unhappy customers are your greatest source of learning",
-            subtitle: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
-            category: "Business, Travel",
+            title: "Pangong Tso Lake Leh Ladakh",
+            subtitle: "Tourists are not to plan their stay near Pangong Lake without prior booking, Ladakh Tourism Department. Want to know the Reason Why?",
+            category: "Travel",
             img : "/images/img1.jpg",
             description: `
-            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind 
-            text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+            It’s no surprise that the tourist season is a difficult time to find accommodation in Ladakh. There is always a heavy rush in the Ladakh region with travellers coming in from all parts of the country to beat the heat.
+After reaching locations such as the very popular Pangong Lake, tourists are known to find it very difficult to arrange for accommodation which leads to a lot of confusion, chaos and overcrowding.
+Keeping this problem in mind, the tourism department authorities of Ladakh have requested all travellers to come to Ladakh with a proper booking of accommodations, especially while visiting the Pangong Lake area.
+The reason being, Pangong Lake is a wildlife sanctuary and unplanned tourist activities and overcrowding would most definitely disturb the wildlife in the area. Also, there is only a limited number of accommodation in the lake area because it is a wildlife sensitive area.
+One of the travel advisories asks travellers to restrict their travel to higher altitude areas like Khardung La, Chang La, Pangong Lake, Tso Moriri and Pensi La before completing 48 hours of acclimatisation.
             `,
             published: "Jun 3,  2022",
             author: {
-                name: "Flying High",
+                name: "Ashutosh Nautiyal",
                 img: "/images/author/author1.jpg",
                 designation : "CEO and Founder"
             }

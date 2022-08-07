@@ -44,7 +44,7 @@ export default function Section3() {
   return (
     <section className='container mx-auto py-16 '>
 
-        <h1 className='font-bold text-4xl py-12 text-center '>Most Popular </h1>
+        <h1 className='font-medium text-gray-700 text-4xl my-4 md:my-12 text-center '>Most Popular </h1>
         
             <Swiper
 
@@ -90,7 +90,7 @@ function Post({data}){
     const {id, category, img, published ,description,  author, title} = data;
 
     return(
-         <div className="item">
+         <div className="item m-2 p-1">
 
             <div className="images">
                 <div className='image' >
@@ -107,7 +107,7 @@ function Post({data}){
                 </div>
 
                 <div className="title ">
-                <Link href={`/posts/${id}`}><a className='  text-center text-justify text-3xl  font-semibold'>title  </a></Link>
+                <Link href={`/posts/${id}`}><a className='  text-center text-justify text-3xl  font-medium'>{title}  </a></Link>
                 </div>
 
                 <p>{description}</p>
