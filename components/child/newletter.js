@@ -2,15 +2,34 @@ import React from 'react'
 
 export default function newletter() {
   return (
-    <section className='bg-gray-50 mt-20 py-16 text-center'>
-        <h1 className='font-bold text-3xl'>Subscribe Newsletter</h1>
+    <div class="w-full md:container  mx-auto relative p-5">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gradient-to-r from-cyan-500 to-blue-500 p-10 lg:p-[60px] rounded-2xl">
+	  <div>
+	  <h3 class="text-white text-3xl font-semibold">Sign up for our newsletter</h3>
 
-        <div className="py-4">
-            <input type="text" className='shadow border-2 rounded-md w-9/12 py-3 px-3 text-gray-700 focus:outline-orange-700 focus:shadow-outline ' placeholder='Enter your Email' />
-        </div>
+	  <p class="text-xl text-white mt-4">
+		  Get the best news on weelky basis! Join now and don't miss it.
+	  </p>
+	  </div>
 
-        <button className='bg-gradient-to-r from-orange-400 to-pink-500 px-20 py-3 rounded-full text-gray-50 text-xl '>Subscribe</button>
+	  <div>
+	  <div class="flex items-stretch">
+		  <input
+		  type="email"
+		  placeholder="Enter your email"
+		  class="px-4 -mx-2 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+	  />
 
-    </section>
+		  <button class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-2 md:px-5 rounded-lg font-semibold ml-4 border-4 border-white">
+		  Subscribe
+		  </button>
+	  </div>
+
+	  <p class="text-white mt-2 text-sm">
+		  We care about your data in our <a href="#" class="underline">privacy policy</a>.
+	  </p>
+	  </div>
+  </div>
+</div>
   )
 }

@@ -42,7 +42,7 @@ export default function Section3() {
  
 
   return (
-    <section className='container mx-auto py-16 '>
+    <section className='container mx-auto py-8 md:py-16 '>
 
         <h1 className='font-medium text-gray-700 text-4xl my-4 md:my-12 text-center '>Most Popular </h1>
         
@@ -87,30 +87,30 @@ export default function Section3() {
 
 function Post({data}){
 
-    const {id, category, img, published ,description,  author, title} = data;
+    const {id, category, img, published ,description, subtitle, author, title} = data;
 
     return(
          <div className="item m-2 p-1">
 
             <div className="images">
                 <div className='image' >
-                <Link href={`/posts/${id}`}>
-                    <Image src={img || "/images/img1.jpg"} className="" width={600} height={450} />
+                <Link href={`/popular/${id}`}>
+                    <Image src={img || "/images/img1.jpg"} className="rounded-md" width={600} height={450} />
                 </Link>
                 </div>
             </div>
 
             <div className="info flex justify-center flex-col py-4 ">
                 <div className="cat">
-                <Link href={`/posts/${id}`}><a className='text-center text-orange-600 '>{category} </a></Link>
+                <Link href={`/popular/${id}`}><a className='text-center text-orange-600 '>{category} </a></Link>
                 <Link href={`/posts/${id}`}><a className='text-center text-gray-600'> - {published}</a></Link>
                 </div>
 
                 <div className="title ">
-                <Link href={`/posts/${id}`}><a className='  text-center text-justify text-3xl  font-medium'>{title}  </a></Link>
+                <Link href={`/popular/${id}`}><a className='  text-center text-justify text-3xl  font-medium'>{title}  </a></Link>
                 </div>
 
-                <p>{description}</p>
+                <p>{subtitle}</p>
 
                 {author?<Author {...author}></Author>:<></> }
 

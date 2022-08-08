@@ -7,25 +7,7 @@ import Section5 from "./Section5";
 
 export default function Header() {
   return (
-    // <header className=" bg-black min-w-full text-white">
-    //     <div className="lg:container xl:mx-auto flex flex-col items-center sm:flex-row sm:justify-between text-center py-3">
-            
-    //         <div className="w-full  flex justify-center">
-    //             <div className="flex gap-3 md:gap-6">
-    //                 <Link href={"/"}><a><ImFacebook color="#ffffff" /></a></Link>
-    //                 <Link href={"/"}><a><ImTwitter color="#ffffff" /></a></Link>                    
-    //                 <Link href={"/"}><a><ImYoutube color="#ffffff" /></a></Link>
-    //             </div>
-    //         </div>
-            
-    //         <div className="hidden md:inline-block shrink w-80 sm:order-1 order-1">
-    //             <Link href={"/"}>
-    //                 <a className="font-medium uppercase text-3xl">Design</a>
-    //             </Link>
-    //         </div>
-            
-    //     </div>
-    // </header>
+    
 
     <header className= "bg text-black  ">
 
@@ -35,9 +17,9 @@ export default function Header() {
 
             <div className="center p-2 md:order-2 leading-relaxed">
                 <div className="img  flex flex-col items-center justify-center text-center mt-8">
-                    <Image src={"/images/bg.webp"} className="rounded-full  p-2 " width={100} height={100}></Image>
-                    <h1 className="font-medium  mt-5  text-xl  md:text-2xl ">Akash</h1>
-                    <h2 className="text-sm  md:text-lg leading-relaxed">Professional Writer and Personal blogger</h2>
+                    <Image src={"/images/author/author1.jpg"} className="rounded-full  p-2 " width={100} height={100}></Image>
+                    <h1 className="font-medium  mt-5  text-xl  md:text-2xl ">Ashutosh</h1>
+                    <h2 className="text-sm  md:text-lg leading-relaxed">Professional Writer and Personal blogger(assumed)</h2>
                 </div>
             </div>
 
@@ -84,11 +66,11 @@ export default function Header() {
 
         <div className="navbody container mx-auto my-24 p">
             <div className="flex flex-col items-center justify-center md:w-[55%] mx-auto text-white xl:text-black text-center p-1">
-                <h1 className="fade-in-text font-medium text-2xl md:text-4xl p-1  md:p-3 my-3 animate-pulse translate-x-7">I'm Akash Dravid.</h1>
+                <h1 className="fade-in-text font-medium text-2xl md:text-4xl p-1  md:p-3 my-3 animate-pulse ">I'm Ashutosh Nautiyal.</h1>
                 <p className="p-2 sm:p-0 text-lg ">
-                Hello, I’m a content writer who is fascinated by content fashion, celebrity and lifestyle. I helps clients bring the right content to the right people.
+                Hello, I’m a not a content writer but I am a developer so I copied the content from different sources. I haven’t been everywhere, but it’s on my list. "One day you leave this world behind, so live a life you'll remember.”
                 </p>
-                <button className="btn my-8 px-4 py-2 border-2 border-gray-200 rounded-full md:hover:bg-white md:hover:scale-110 duration-200 font-medium">
+                <button className="btn my-8 px-4 py-2 border-2 border-gray-200 rounded-full md:hover:bg-white md:hover:scale-110   duration-200 font-medium">
                     About me
                 </button>
             </div>

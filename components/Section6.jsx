@@ -34,7 +34,7 @@ export default function Section6() {
 
   return (
 
-    <section className='container mx-auto  py-10'>
+    <section className='container mx-auto  md:py-10'>
         <h1 className='font-medium text-4xl text-gray-700 py-12 text-center '>Latest Posts</h1>
 
         {/* grid columns */}
@@ -60,7 +60,7 @@ export default function Section6() {
 
 function Post({data}){
 
-  const {id, category, img, published , author, title} = data;
+  const {id, category, img, published ,subtitle,  author, title} = data;
 
 
 
@@ -85,7 +85,7 @@ function Post({data}){
                     <Link href={`/posts/${id}`}><a className='text-center text-xl md:text-2xl font-medium'>{title} </a></Link>
                 </div>
 
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iste repellat quo aperiam possimus porro a repellendus eos, officia itaque quidem quae, minima saepe. Possimus veritatis, impedit quo dolore sunt alias facilis dolores ipsum nostrum vero inventore similique animi sequi maxime. Nulla, iure et.</p>
+                <p>{subtitle}</p>
 
                 {/* {author?<Author {...author}></Author>:<></> } */}
                 <br />
