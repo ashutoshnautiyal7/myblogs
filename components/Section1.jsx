@@ -75,7 +75,7 @@ export default function Section1() {
 
                     {data.map((item) => (
                         // <Post data={item} />
-                        <SwiperSlide><Slide data={item} /></SwiperSlide>
+                        <SwiperSlide key={item.id}><Slide data={item} /></SwiperSlide>
                     ))}
                 </Swiper>
         </div>
@@ -97,7 +97,7 @@ function Slide({data}){
         <div className="grid md:grid-cols-2 m-2 p-1">
             <div className='image flex flex-col items-center justify-center'  >
                 <Link href={`/trending/${id}`}>
-                  <Image src={img || "/images/img1.jpg"} className="rounded-md" width={600} height={600} />
+                  <Image src={img || "/images/img1.jpg"} className="rounded-md" width={600} height={600} alt='image' />
                 </Link>
             </div>
 

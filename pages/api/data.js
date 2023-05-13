@@ -1,7 +1,7 @@
 
 // we have three objects here i.e trending posts and popular
 
-export default {  
+const data =    {  
     Trending : [
         {
             id: 1,
@@ -333,3 +333,5 @@ Mussoorie is also the home of the famous writer, Ruskin Bond. He visits the Camb
         }
     ]
 }
+
+export default data; 

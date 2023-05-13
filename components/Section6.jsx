@@ -49,7 +49,7 @@ export default function Section6() {
 
           
             {data.map((item) => (
-            <Post data={item} />
+            <Post key={item.id} data={item} />
             ))}
 
         </div>
@@ -70,7 +70,7 @@ function Post({data}){
             <div className="images">
                 <div className='image ' >
                   <Link href={`/posts/${id}`}>
-                    <Image src={img || "/images/bg.webp"} className="rounded-t-md sm:w-fulljj" width={500} height={350} />
+                    <Image src={img || "/images/bg.webp"} className="rounded-t-md sm:w-fulljj" width={500} height={350 } alt='noimage' />
                   </Link>
                 </div>
             </div>

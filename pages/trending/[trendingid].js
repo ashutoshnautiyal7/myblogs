@@ -38,6 +38,7 @@ export default function page({id, category, img, published ,description, subtitl
                     <Image src={img || '/images/img1.jpg'} 
                             width={1200}
                             height={800}
+                            alt="image"
                     ></Image>
                 </div>
 

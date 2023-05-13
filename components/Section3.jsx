@@ -75,7 +75,7 @@ export default function Section3() {
 
                         {data.map((item) => (
                         // <Post data={item} />
-                            <SwiperSlide><Post data={item} /></SwiperSlide>
+                            <SwiperSlide key={item.id}><Post data={item} /></SwiperSlide>
                         ))}
 
                     
@@ -95,7 +95,7 @@ function Post({data}){
             <div className="images">
                 <div className='image' >
                 <Link href={`/popular/${id}`}>
-                    <Image src={img || "/images/img1.jpg"} className="rounded-md" width={600} height={450} />
+                    <Image src={img || "/images/img1.jpg"} className="rounded-md" width={600} height={450} alt='image' />
                 </Link>
                 </div>
             </div>

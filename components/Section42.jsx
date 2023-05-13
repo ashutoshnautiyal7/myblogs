@@ -78,7 +78,7 @@ function Trending({data}){
 
             <div className='image' >
             <Link href={`/trending/${id}`}>
-                    <Image src={img || "/images/img1.jpg"} className="rounded" width={300} height={300} />
+                    <Image src={img || "/images/img1.jpg"} className="rounded" width={300} height={300} alt='no-image' />
             </Link>
                 </div>
             </div>

@@ -17,7 +17,7 @@ export default function Header() {
 
             <div className="center p-2 md:order-2 leading-relaxed">
                 <div className="img  flex flex-col items-center justify-center text-center mt-8">
-                    <Image src={"/images/author/author1.jpg"} className="rounded-full  p-2 " width={100} height={100}></Image>
+                    <Image src={"/images/author/author1.jpg"} className="rounded-full  p-2 " width={100} height={100} alt="iamge"></Image>
                     <h1 className="font-medium  mt-5  text-xl  md:text-2xl ">Ashutosh</h1>
                     <h2 className="text-sm  md:text-lg leading-relaxed">Professional Writer and Personal blogger(assumed)</h2>
                 </div>
@@ -66,9 +66,9 @@ export default function Header() {
 
         <div className="navbody container mx-auto my-24 p">
             <div className="flex flex-col items-center justify-center md:w-[55%] mx-auto text-white xl:text-black text-center p-1">
-                <h1 className="fade-in-text font-medium text-2xl md:text-4xl p-1  md:p-3 my-3 animate-pulse ">I'm Ashutosh Nautiyal.</h1>
+                <h1 className="fade-in-text font-medium text-2xl md:text-4xl p-1  md:p-3 my-3 animate-pulse ">I&apos;m Ashutosh Nautiyal.</h1>
                 <p className="p-2 sm:p-0 text-lg ">
-                Hello, I’m a not a content writer but I am a developer so I copied the content from different sources. I haven’t been everywhere, but it’s on my list. "One day you leave this world behind, so live a life you'll remember.”
+                Hello, I&apos;m a not a content writer but I am a developer so I copied the content from different sources. I haven’t been everywhere, but it’s on my list. &quot;One day you leave this world behind, so live a life you&apos;ll remember.”
                 </p>
                 <button className="btn my-8 px-4 py-2 border-2 border-gray-200 rounded-full md:hover:bg-white md:hover:scale-110   duration-200 font-medium">
                     About me

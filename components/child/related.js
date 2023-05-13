@@ -7,7 +7,7 @@ import Spinner from './spinner'
 
 
 
-export default function related() {
+export default function Related() {
 
     // fetching the data from the backend 
     const [data, setData] = useState([]);
@@ -47,7 +47,7 @@ export default function related() {
 
         {
             data.map((item) => (
-              <Post data={item} ></Post>
+              <Post key={item.id} data={item} ></Post>
             ))
         }
       </div>
@@ -65,7 +65,7 @@ function Post({data}){
 
       <div className='image' >
               <Link href={`/posts/${id}`}>
-              <Image src={img ||"/images/img1.jpg"} className="rounded" width={200} height={170} />
+              <Image src={img ||"/images/img1.jpg"} className="rounded" width={200} height={170} alt='noimage'/>
               </Link>
           </div>
       </div>
